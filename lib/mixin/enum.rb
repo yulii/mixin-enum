@@ -1,4 +1,4 @@
-require "mixin/enum/version"
+require 'mixin/enum/version'
 
 module Mixin
   module Enum
