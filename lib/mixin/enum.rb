@@ -1,9 +1,11 @@
 require 'mixin/enum/version'
+require 'mixin/enum/struct'
 
 module Mixin
   module Enum
     def self.included(klass)
       klass.extend ClassMethods
+      klass.extend Struct::ClassMethods
     end
 
     module ClassMethods
