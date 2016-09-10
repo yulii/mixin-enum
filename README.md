@@ -1,8 +1,9 @@
 # Mixin::Enum
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mixin/enum`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/yulii/mixin-enum.svg?branch=master)](https://travis-ci.org/yulii/mixin-enum)
+[![Coverage Status](https://coveralls.io/repos/github/yulii/mixin-enum/badge.svg?branch=master)](https://coveralls.io/github/yulii/mixin-enum?branch=master)
 
-TODO: Delete this and the text above, and describe your gem
+Provides a module constant for defining enumerations.
 
 ## Installation
 
