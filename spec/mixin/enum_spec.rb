@@ -3,11 +3,26 @@ describe Mixin::Enum do
     expect(Mixin::Enum::VERSION).not_to be nil
   end
 
+  describe '.enum_struct' do
+    it do
+      expect(Map.const_defined?(:EnumStruct)).to be true
+    end
+  end
+
   describe '.values' do
-    subject { Status.values }
+    it do
+      expect(Status.values).to contain_exactly(
+        Status::REQUESTED,
+        Status::IN_PROGRESS,
+        Status::UNDER_REVIEW,
+        Status::APPROVED,
+        Status::REJECTED,
+        Status::CANCELLED
+      )
+    end
 
     it do
-      is_expected.to contain_exactly(
+      expect(Map.values.map(&:code)).to contain_exactly(
         Status::REQUESTED,
         Status::IN_PROGRESS,
         Status::UNDER_REVIEW,
@@ -19,10 +34,8 @@ describe Mixin::Enum do
   end
 
   describe '.all' do
-    subject { Status.all }
-
     it do
-      is_expected.to match(
+      expect(Status.all).to match(
         REQUESTED:    1,
         IN_PROGRESS:  2,
         UNDER_REVIEW: 3,
