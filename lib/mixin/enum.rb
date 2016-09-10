@@ -2,7 +2,6 @@ require 'mixin/enum/version'
 
 module Mixin
   module Enum
-
     def self.included(klass)
       klass.extend ClassMethods
     end
