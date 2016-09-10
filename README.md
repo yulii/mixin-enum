@@ -1,5 +1,6 @@
 # Mixin::Enum
 
+[![Gem Version](https://badge.fury.io/rb/mixin-enum.svg)](https://badge.fury.io/rb/mixin-enum)
 [![Build Status](https://travis-ci.org/yulii/mixin-enum.svg?branch=master)](https://travis-ci.org/yulii/mixin-enum)
 [![Coverage Status](https://coveralls.io/repos/github/yulii/mixin-enum/badge.svg?branch=master)](https://coveralls.io/github/yulii/mixin-enum?branch=master)
 
@@ -13,17 +14,23 @@ Add this line to your application's Gemfile:
 gem 'mixin-enum'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install mixin-enum
-
 ## Usage
 
-TODO: Write usage instructions here
+Include Mixin::Enum and define constants on the module. You can see [the examples of enumeration module file](https://github.com/yulii/mixin-enum/tree/master/examples).
+
+
+```ruby
+module Status
+  include Mixin::Enum
+
+  REQUESTED    = 1
+  IN_PROGRESS  = 2
+  UNDER_REVIEW = 3
+  APPROVED     = 4
+  REJECTED     = 5
+  CANCELLED    = 6
+end
+```
 
 ## Development
 
