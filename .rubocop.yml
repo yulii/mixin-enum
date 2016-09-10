@@ -9,3 +9,7 @@ Metrics/LineLength:
 Style/Documentation:
   Enabled: false
 
+Style/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  SpaceBeforeBlockParameters: false
