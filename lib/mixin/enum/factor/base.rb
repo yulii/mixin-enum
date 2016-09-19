@@ -6,17 +6,13 @@ module Mixin
           @items = {}
         end
 
-        def set(name, *values)
-          @items[name] = struct_class.new(*values)
+        def set(name, value)
+          @items[name] = value
         end
 
         def each(&block)
           @items.each(&block)
         end
-
-        private
-
-        attr_accessor :struct_class
       end
     end
   end
