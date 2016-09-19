@@ -3,6 +3,16 @@ describe Mixin::Enum do
     expect(Mixin::Enum::VERSION).not_to be nil
   end
 
+  subject do
+    Module.new do
+      include Mixin::Enum
+    end
+  end
+
+  it 'defines public methods' do
+    expect(subject.public_methods - Module.public_methods).to contain_exactly(:all, :enumerated, :unite, :values)
+  end
+
   describe '.values' do
     it do
       expect(StatusCode.values).to contain_exactly(

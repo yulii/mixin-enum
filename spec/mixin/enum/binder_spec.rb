@@ -1,6 +1,6 @@
 describe Mixin::Enum::Binder do
   subject do
-    Class.new do
+    Module.new do
       include Mixin::Enum::Binder
     end
   end

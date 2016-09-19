@@ -2,6 +2,8 @@ require 'mixin/enum/version'
 require 'mixin/enum/accessor'
 require 'mixin/enum/binder'
 
+require 'mixin/enum/factor_factory'
+
 require 'mixin/enum/factor/base'
 require 'mixin/enum/factor/object'
 require 'mixin/enum/factor/struct'
@@ -22,9 +24,7 @@ module Mixin
 
     module ClassMethods
       def enumerated(*args, &block)
-        factor = args.empty? ? Factor::Object.new : Factor::Struct.new(*args)
-        factor.instance_eval(&block)
-        unite(factor)
+        unite FactorFactory.create(*args, &block)
         freeze
       end
     end
