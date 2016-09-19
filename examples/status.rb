@@ -1,10 +1,12 @@
 module Status
   include Mixin::Enum
 
-  REQUESTED    = 1
-  IN_PROGRESS  = 2
-  UNDER_REVIEW = 3
-  APPROVED     = 4
-  REJECTED     = 5
-  CANCELLED    = 6
+  enumerated(:code, :text) do
+    set(:REQUESTED,    1, 'Requested')
+    set(:IN_PROGRESS,  2, 'In progress')
+    set(:UNDER_REVIEW, 3, 'Under review')
+    set(:APPROVED,     4, 'Approved')
+    set(:REJECTED,     5, 'Rejected')
+    set(:CANCELLED,    6, 'Cancelled')
+  end
 end

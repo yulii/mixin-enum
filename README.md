@@ -20,17 +20,27 @@ Include Mixin::Enum and define constants on the module. You can see [the example
 
 
 ```ruby
-module Status
+module StatusCode
   include Mixin::Enum
 
-  REQUESTED    = 1
-  IN_PROGRESS  = 2
-  UNDER_REVIEW = 3
-  APPROVED     = 4
-  REJECTED     = 5
-  CANCELLED    = 6
+  enumerated do
+    set(:REQUESTED,    1)
+    set(:IN_PROGRESS,  2)
+    set(:UNDER_REVIEW, 3)
+    set(:APPROVED,     4)
+    set(:REJECTED,     5)
+    set(:CANCELLED,    6)
+  end
 end
+
+irb> StatusCode::REQUESTED
+=> 1
+irb> StatusCode.values
+=> [1, 2, 3, 4, 5, 6]
+irb> StatusCode.all
+=> {:REQUESTED=>1, :IN_PROGRESS=>2, :UNDER_REVIEW=>3, :APPROVED=>4, :REJECTED=>5, :CANCELLED=>6}
 ```
+
 
 ## Development
 
