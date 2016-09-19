@@ -2,8 +2,8 @@ module Mixin
   module Enum
     module Factor
       class Struct < Base
-        def initialize(*attributes)
-          @struct_class = ::Struct.new(*attributes)
+        def initialize(*members)
+          @struct_class = ::Struct.new(*members)
           super()
         end
 

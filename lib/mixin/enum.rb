@@ -23,8 +23,8 @@ module Mixin
     end
 
     module ClassMethods
-      def enumerated(*args, &block)
-        unite FactorFactory.create(*args, &block)
+      def enumerated(*members, &block)
+        unite FactorFactory.create(*members, &block)
         freeze
       end
     end
